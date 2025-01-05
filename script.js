@@ -14,10 +14,10 @@ const duracaoFoco = 1500;
 const duracaoDescansoCurto = 300;
 const duracaoDescansoLongo = 900;
 
-const musica = new Audio('/Fokus/sons/luna-rise-part-one.mp3')
-const audioBeep = new Audio('/Fokus/sons/beep.mp3')
-const audioPlay = new Audio('/Fokus/sons/play.wav')
-const audioPause = new Audio('/Fokus/sons/pause.mp3')
+const musica = new Audio('./sons/luna-rise-part-one.mp3')
+const audioBeep = new Audio('./sons/beep.mp3')
+const audioPlay = new Audio('./sons/play.wav')
+const audioPause = new Audio('./sons/pause.mp3')
 
 musica.loop = true
 
@@ -59,7 +59,7 @@ function alterarContexto(contexto) {
         contexto.classList.remove('active')
     })
     html.setAttribute('data-contexto', contexto)
-    banner.setAttribute('src', `/Fokus/imagens/${contexto}.png`)
+    banner.setAttribute('src', `./imagens/${contexto}.png`)
     switch (contexto) {
         case 'foco':
             titulo.innerHTML = `                
@@ -107,13 +107,13 @@ function iniciarOuPausar() {
     audioPlay.play()
     intervaloId = setInterval(contagemRegressiva, 1000)
     iniciarOuPausarBt.textContent = 'Pausar'
-    iniciarOuPausarIcone.setAttribute('src', '/Fokus/imagens/pause.png')
+    iniciarOuPausarIcone.setAttribute('src', './imagens/pause.png')
 }
 
 function zerar() {
     clearInterval(intervaloId)
     iniciarOuPausarBt.textContent = 'Começar'
-    iniciarOuPausarIcone.setAttribute('src', '/Fokus/imagens/play_arrow.png')
+    iniciarOuPausarIcone.setAttribute('src', './imagens/play_arrow.png')
     intervaloId = null;
 }
 
